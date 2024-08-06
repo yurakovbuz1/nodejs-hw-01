@@ -11,7 +11,8 @@ const generateContacts = async (number) => {
                 contacts.push(createFakeContact());
             }
             fs.writeFile(PATH_DB, JSON.stringify(contacts, null, 2));
-        });
+        })
+        .catch((error) => console.log("error: ", error));
 };
 
 generateContacts(3);
